@@ -1,0 +1,8 @@
+.app {
+  max-width: 1340px;
+  background: #fff;
+  margin: 43px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.08);
+  padding: 67px;
+}
