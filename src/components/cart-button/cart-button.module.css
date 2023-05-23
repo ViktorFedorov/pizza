@@ -1,0 +1,25 @@
+.button {
+  font-family: 'Nunito', sans-serif;
+  background: #FE5F1E;
+  border-radius: 30px;
+  border: none;
+  padding: 14px 23px;
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.price {
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  padding-right: 13px;
+}
+
+.quantity {
+  background: url(../../images/cart.svg) no-repeat 13px center;
+  padding-left: 36px;
+}
