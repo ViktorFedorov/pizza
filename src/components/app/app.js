@@ -1,11 +1,7 @@
 import React from 'react'
 
 function App() {
-  return (
-    <div>
-      555
-    </div>
-  )
+  return <div>123</div>
 }
 
 export default App
