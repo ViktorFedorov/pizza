@@ -1,0 +1,95 @@
+.card {
+  width: 280px;
+  /*outline: 1px solid lightcoral;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img {
+  padding-left: 12px;
+  margin-bottom: 11px;
+}
+
+.heading {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.settings {
+  width: 100%;
+  background: #F3F3F3;
+  border-radius: 10px;
+  padding: 7px 6px;
+  margin-bottom: 17px;
+}
+
+.size,
+.base,
+.cardFooter {
+  display: flex;
+  gap: 6px;
+}
+
+.base {
+  margin-bottom: 7px;
+}
+
+.base li,
+.size li {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 6px 10px;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+}
+
+.active {
+  background: #fff !important;
+}
+
+
+.cardFooter {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%
+}
+.price {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 800;
+}
+
+.add {
+  border: 1px solid #EB5A1E;
+  border-radius: 30px;
+  background: url(../../images/plus.svg) transparent no-repeat 17px center;
+  padding: 11px 47px 11px 40px;
+  color: #EB5A1E;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  position: relative;
+  cursor: pointer;
+}
+
+.counter {
+  width: 22px;
+  height: 22px;
+  background: #EB5A1E;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 13px;
+  line-height: 24px;
+  position: absolute;
+  right: 14px;
+  top: 10px;
+}
