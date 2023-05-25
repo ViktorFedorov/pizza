@@ -11,7 +11,6 @@ function App() {
       <Header />
       <FilterPanel />
       <Cards />
-      <CardItem />
     </div>
   )
 }
