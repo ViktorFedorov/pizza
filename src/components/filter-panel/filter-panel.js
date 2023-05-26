@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
+import filters from '../../assets/menu'
 import styles from './filter-panel.module.css'
-
-const menu = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
 
 const FilterPanel = () => {
   const [active, setActive] = useState('Все')
@@ -9,7 +8,7 @@ const FilterPanel = () => {
   return (
     <div className={styles.panel}>
       <ul className={styles.filters}>
-        {menu.map((item) => {
+        {filters.map((item) => {
           return (
             <li
               onClick={() => setActive(item)}
