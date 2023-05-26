@@ -9,8 +9,8 @@ const Cards = () => {
     <div>
       <h1 className={styles.heading}>Все пиццы</h1>
       <ul className={styles.list}>
-        {fakeData.map(() => (
-          <CardItem />
+        {fakeData.map((e, i) => (
+          <CardItem key={i} />
         ))}
       </ul>
     </div>
