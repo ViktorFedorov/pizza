@@ -76,6 +76,17 @@
   font-weight: 700;
   position: relative;
   cursor: pointer;
+  transition: all ease-out 0.2s;
+}
+
+.add:hover {
+  background: url(../../images/plus-invert.svg) #FE5F1E no-repeat 17px center;
+  color: #fff;
+}
+
+.add:hover .counter {
+  color: #EB5A1E;
+  background: #fff;
 }
 
 .counter {
