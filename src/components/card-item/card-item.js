@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import pizzaImage from '../../images/item1.jpg'
 import styles from './card-item.module.css'
 
-const CardItem = () => {
+const CardItem = ({ title, price, image }) => {
   const [quantity, setQuantity] = useState(0)
 
   return (
     <li className={styles.card}>
-      <img className={styles.img} src={pizzaImage} alt='' />
-      <h3 className={styles.heading}>Чизбургер-пицца</h3>
+      <img className={styles.img} src={image} alt='' />
+      <h3 className={styles.heading}>{title}</h3>
       <div className={styles.settings}>
         <ul className={styles.base}>
           <li className={styles.active}>тонкое</li>
@@ -21,7 +20,7 @@ const CardItem = () => {
         </ul>
       </div>
       <div className={styles.cardFooter}>
-        <div className={styles.price}>от 395 ₽</div>
+        <div className={styles.price}>от {price} ₽</div>
         <button
           onClick={() => setQuantity(quantity + 1)}
           className={styles.add}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import filters from '../../assets/menu'
+import filters from '../../data/menu'
 import styles from './filter-panel.module.css'
 
 const FilterPanel = () => {
