@@ -3,17 +3,17 @@ import filters from '../../data/menu'
 import styles from './filter-panel.module.css'
 
 const FilterPanel = () => {
-  const [active, setActive] = useState('Все')
+  const [active, setActive] = useState(0)
 
   return (
     <div className={styles.panel}>
       <ul className={styles.filters}>
-        {filters.map((item) => {
+        {filters.map((item, index) => {
           return (
             <li
-              onClick={() => setActive(item)}
+              onClick={() => setActive(index)}
               key={item}
-              className={item === active ? styles.active : null}
+              className={index === active ? styles.active : null}
             >
               {item}
             </li>
