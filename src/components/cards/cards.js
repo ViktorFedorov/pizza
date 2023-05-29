@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import CardItem from '../card-item/card-item'
 import { getPizzaList } from '../../utils/api'
-import styles from './cards.module.css'
 import SpinnerLoader from '../spinner-loader/spinner-loader'
+import styles from './cards.module.css'
 
 const Cards = () => {
   const [list, setList] = useState([])

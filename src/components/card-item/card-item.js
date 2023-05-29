@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styles from './card-item.module.css'
 
-const CardItem = ({ title, price, image }) => {
+const CardItem = ({ title, price, image, sizes }) => {
   const [quantity, setQuantity] = useState(0)
+  const [activeType, setActiveType] = useState('тонкое')
+  const [activeSize, setActiveSize] = useState(0)
 
   return (
     <li className={styles.card}>
@@ -10,13 +12,29 @@ const CardItem = ({ title, price, image }) => {
       <h3 className={styles.heading}>{title}</h3>
       <div className={styles.settings}>
         <ul className={styles.base}>
-          <li className={styles.active}>тонкое</li>
-          <li>традиционное</li>
+          <li
+            onClick={() => setActiveType('тонкое')}
+            className={activeType === 'тонкое' ? styles.active : null}
+          >
+            тонкое
+          </li>
+          <li
+            onClick={() => setActiveType('традиционное')}
+            className={activeType === 'традиционное' ? styles.active : null}
+          >
+            традиционное
+          </li>
         </ul>
         <ul className={styles.size}>
-          <li>26 см.</li>
-          <li>30 см.</li>
-          <li className={styles.active}>40 см.</li>
+          {sizes.map((item, index) => (
+            <li
+              className={index === activeSize ? styles.active : null}
+              onClick={() => setActiveSize(index)}
+              key={item}
+            >
+              {item} см.
+            </li>
+          ))}
         </ul>
       </div>
       <div className={styles.cardFooter}>
