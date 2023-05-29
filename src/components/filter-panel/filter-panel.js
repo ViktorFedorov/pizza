@@ -25,7 +25,7 @@ const FilterPanel = () => {
     setOpen(false)
   }
 
-  // клик по свободной области экрана закрывает модалку сортировки
+  // клик по свободной области экрана и нажатие Esc закрывает модалку сортировки
   useEffect(() => {
     const closeModal = () => setOpen(false)
     const closeModalOnEsc = (e) => e.key === 'Escape' && setOpen(false)
@@ -55,10 +55,8 @@ const FilterPanel = () => {
           )
         })}
       </ul>
-
       <div className={styles.sort}>
         <p className={styles.text}>Сортировка по: </p>
-
         <span onClick={clickHandler} className={styles.select}>
           {sortBy}
         </span>
@@ -70,8 +68,12 @@ const FilterPanel = () => {
                 return (
                   <li
                     onClick={() => sortHandler(item)}
-                    className={styles.listItem}
                     key={item}
+                    className={
+                      sortBy === item
+                        ? `${styles.listItem} ${styles.selected}`
+                        : styles.listItem
+                    }
                   >
                     {item}
                   </li>

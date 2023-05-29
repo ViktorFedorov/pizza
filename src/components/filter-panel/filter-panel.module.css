@@ -93,6 +93,9 @@
 
 .listItem:hover {
   background: rgba(254, 95, 30, 0.05);
+}
+
+.selected {
   color: #EB5A1E;
   font-weight: 700;
 }
