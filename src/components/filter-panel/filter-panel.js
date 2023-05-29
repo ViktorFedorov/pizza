@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import filters from '../../data/menu'
+import sortCategories from '../../data/sort'
 import styles from './filter-panel.module.css'
 
 const FilterPanel = () => {
@@ -8,6 +9,36 @@ const FilterPanel = () => {
 
   // состояние модального окна сортировки
   const [open, setOpen] = useState(false)
+
+  // выбор поля сортировки - по умолчанию - первый в списке
+  const [sortBy, setSortBy] = useState(sortCategories[0])
+
+  // показ модалки сортировки
+  const clickHandler = (e) => {
+    e.stopPropagation()
+    setOpen(!open)
+  }
+
+  // выбор категории по которой будет произведена сортироввка
+  const sortHandler = (str) => {
+    setSortBy(str)
+    setOpen(false)
+  }
+
+  // клик по свободной области экрана закрывает модалку сортировки
+  useEffect(() => {
+    const closeModal = () => setOpen(false)
+    const closeModalOnEsc = (e) => e.key === 'Escape' && setOpen(false)
+
+    document.addEventListener('click', closeModal)
+    document.addEventListener('keydown', closeModalOnEsc)
+
+    // отписка от событий
+    return () => {
+      document.removeEventListener('click', closeModal)
+      document.removeEventListener('keydown', closeModalOnEsc)
+    }
+  }, [])
 
   return (
     <div className={styles.panel}>
@@ -28,16 +59,24 @@ const FilterPanel = () => {
       <div className={styles.sort}>
         <p className={styles.text}>Сортировка по: </p>
 
-        <span onClick={() => setOpen(!open)} className={styles.select}>
-          популярности
+        <span onClick={clickHandler} className={styles.select}>
+          {sortBy}
         </span>
 
         {open && (
           <div className={styles.modal}>
             <ul className={styles.list}>
-              <li className={styles.listItem}>популярности</li>
-              <li className={styles.listItem}>цене</li>
-              <li className={styles.listItem}>алфавиту</li>
+              {sortCategories.map((item) => {
+                return (
+                  <li
+                    onClick={() => sortHandler(item)}
+                    className={styles.listItem}
+                    key={item}
+                  >
+                    {item}
+                  </li>
+                )
+              })}
             </ul>
           </div>
         )}
