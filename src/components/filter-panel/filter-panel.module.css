@@ -63,6 +63,9 @@
   color: #EB5A1E;
   display: block;
   cursor: pointer;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
 }
 
 .modal {
