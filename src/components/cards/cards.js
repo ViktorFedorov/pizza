@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import CardItem from '../card-item/card-item'
 import { getPizzaList } from '../../utils/api'
-import SpinnerLoader from '../spinner-loader/spinner-loader'
-import styles from './cards.module.css'
 import Skeleton from '../skeleton/skeleton'
-
-const fakeCards = [1, 1, 1, 1]
+import styles from './cards.module.css'
 
 const Cards = () => {
   const [list, setList] = useState([])
@@ -23,8 +20,8 @@ const Cards = () => {
       <h1 className={styles.heading}>Все пиццы</h1>
       {loading ? (
         <ul className={styles.list}>
-          {fakeCards.map((item) => (
-            <Skeleton />
+          {[...new Array(4)].map((item, i) => (
+            <Skeleton key={i} />
           ))}
         </ul>
       ) : (
