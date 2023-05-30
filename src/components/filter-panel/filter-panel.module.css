@@ -99,3 +99,32 @@
   color: #EB5A1E;
   font-weight: 700;
 }
+
+@media screen and (max-width: 1220px) {
+  .filters li {
+    padding: 12px 20px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .select {
+    font-size: 13px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .panel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sort {
+    margin-top: 25px;
+  }
+}
