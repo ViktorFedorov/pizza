@@ -21,16 +21,16 @@ const Cards = () => {
   return (
     <div>
       <h1 className={styles.heading}>Все пиццы</h1>
-      {!loading ? (
+      {loading ? (
         <ul className={styles.list}>
-          {list.map((item) => (
-            <CardItem key={item.title} {...item} />
+          {fakeCards.map((item) => (
+            <Skeleton />
           ))}
         </ul>
       ) : (
         <ul className={styles.list}>
-          {fakeCards.map((item) => (
-            <Skeleton />
+          {list.map((item) => (
+            <CardItem key={item.title} {...item} />
           ))}
         </ul>
       )}
