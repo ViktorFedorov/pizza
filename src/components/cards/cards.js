@@ -18,19 +18,11 @@ const Cards = () => {
   return (
     <div>
       <h1 className={styles.heading}>Все пиццы</h1>
-      {loading ? (
-        <ul className={styles.list}>
-          {[...new Array(4)].map((item, i) => (
-            <Skeleton key={i} />
-          ))}
-        </ul>
-      ) : (
-        <ul className={styles.list}>
-          {list.map((item) => (
-            <CardItem key={item.title} {...item} />
-          ))}
-        </ul>
-      )}
+      <ul className={styles.list}>
+        {loading
+          ? [...new Array(4)].map((item, i) => <Skeleton key={i} />)
+          : list.map((item) => <CardItem key={item.title} {...item} />)}
+      </ul>
     </div>
   )
 }
