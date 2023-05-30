@@ -1,0 +1,12 @@
+.wrapper {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic {
+  display: block;
+  width: 500px;
+  height: 500px;
+}

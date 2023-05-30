@@ -20,3 +20,7 @@ ul, li {
 body {
   font-family: 'Nunito', sans-serif;
 }
+
+.link {
+  text-decoration: none;
+}
