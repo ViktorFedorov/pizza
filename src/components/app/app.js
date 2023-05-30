@@ -3,6 +3,7 @@ import Header from '../header/header'
 import FilterPanel from '../filter-panel/filter-panel'
 import Cards from '../cards/cards'
 import styles from './app.module.css'
+import Skeleton from '../skeleton/skeleton'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <FilterPanel />
       <Cards />
+      <Skeleton />
     </div>
   )
 }
