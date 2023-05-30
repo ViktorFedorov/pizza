@@ -11,10 +11,9 @@ function App() {
     <div className={styles.app}>
       <Header />
       <Routes>
-        <Route path='*' element={<PageNotFound />} />
         <Route path='/' element={<Main />} />
         <Route path='/cart' element={<Cart />} />
-        <Route path='/404' element={<PageNotFound />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </div>
   )
