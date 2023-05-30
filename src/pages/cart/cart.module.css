@@ -1,0 +1,31 @@
+.cart {
+  margin: 94px auto 0;
+  max-width: 820px;
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+  padding-left: 45px;
+  background: url(../../images/cart-large.svg) no-repeat left center;
+}
+
+.empty {
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  color: #B6B6B6;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  background: url(../../images/trash.svg) no-repeat left center;
+}

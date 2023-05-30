@@ -3,7 +3,7 @@ import Header from '../header/header'
 import { Routes, Route } from 'react-router-dom'
 import styles from './app.module.css'
 import Main from '../../pages/main'
-import Cart from '../../pages/cart'
+import Cart from '../../pages/cart/cart'
 import PageNotFound from '../../pages/404/404'
 
 function App() {
