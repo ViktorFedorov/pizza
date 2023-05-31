@@ -12,21 +12,21 @@ const Cards = ({ activeFilter, sortBy }) => {
   useEffect(() => {
     setLoading(true)
 
-    getPizzaList(activeFilter)
+    getPizzaList(activeFilter, sortBy.title)
       .then(setList)
       .finally(() => setLoading(false))
-  }, [activeFilter])
+  }, [activeFilter, sortBy])
 
-  const data = [...list].sort((a, b) => {
-    switch (sortBy.title) {
-      case 'price':
-        return b.price - a.price
-      case 'rating':
-        return b.raiting - a.raiting
-      default:
-        return b.title > a.title ? -1 : 1
-    }
-  })
+  // const data = [...list].sort((a, b) => {
+  //   switch (sortBy.title) {
+  //     case 'price':
+  //       return b.price - a.price
+  //     case 'rating':
+  //       return b.raiting - a.raiting
+  //     default:
+  //       return b.title > a.title ? -1 : 1
+  //   }
+  // })
 
   return (
     <div>
@@ -34,7 +34,7 @@ const Cards = ({ activeFilter, sortBy }) => {
       <ul className={styles.list}>
         {loading
           ? [...new Array(4)].map((item, i) => <Skeleton key={i} />)
-          : data.map((item) => <CardItem key={item.title} {...item} />)}
+          : list.map((item) => <CardItem key={item.title} {...item} />)}
       </ul>
     </div>
   )
