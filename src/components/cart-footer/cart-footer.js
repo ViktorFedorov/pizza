@@ -14,7 +14,9 @@ const CartFooter = () => {
         </div>
       </div>
       <div className={styles.row2}>
-        <Link className={styles.backLink}>Вернуться назад</Link>
+        <Link to='/' className={styles.backLink}>
+          Вернуться назад
+        </Link>
         <button className={styles.buy}>Оплатить сейчас</button>
       </div>
     </div>
