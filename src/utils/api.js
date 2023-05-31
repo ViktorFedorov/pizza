@@ -4,17 +4,15 @@ const checkResponse = (res) => {
 }
 
 /*
-запрашиваем с бэка список товаров с учетом категорий,
+запрашиваем с бэка список товаров с учетом категорий и сортировки,
 если категория 0, то все товары
 */
 const getPizzaList = (category, sortBy) => {
   let url = ''
 
-  category || sortBy
+  category && sortBy
     ? (url = `${apiBase}/pizza-list?category=${category}&sortBy=${sortBy}`)
-    : (url = `${apiBase}/pizza-list`)
-
-  console.log(url) // ???????????????????????????????????
+    : (url = `${apiBase}/pizza-list?sortBy=${sortBy}`)
 
   return fetch(url).then(checkResponse)
 }
