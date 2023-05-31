@@ -3,12 +3,9 @@ import filters from '../../data/filters'
 import sortCategories from '../../data/sort'
 import styles from './filter-panel.module.css'
 
-const FilterPanel = ({ activeFilter, setActiveFilter }) => {
+const FilterPanel = ({ activeFilter, setActiveFilter, sortBy, setSortBy }) => {
   // состояние модального окна сортировки
   const [open, setOpen] = useState(false)
-
-  // выбор поля сортировки - по умолчанию - первый в списке
-  const [sortBy, setSortBy] = useState(sortCategories[0])
 
   // показ модалки сортировки
   const clickHandler = (e) => {
