@@ -21,11 +21,17 @@
   border: none;
   outline: none;
   padding-left: 25px;
-  color: #B6B6B6;
+  color: #abaaaa;
+  opacity: 0.7;
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
-  background: url(../../images/trash.svg) no-repeat left center;
+  background: url(../../images/trash.svg) no-repeat left 8px;
+  transition: opacity ease-in-out 0.1s;
+}
+
+.empty:hover {
+  opacity: 1;
 }
