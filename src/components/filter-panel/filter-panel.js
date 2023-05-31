@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import filters from '../../data/menu'
+import filters from '../../data/filters'
 import sortCategories from '../../data/sort'
 import styles from './filter-panel.module.css'
 
-const FilterPanel = () => {
-  // активная кнопка фильтра
-  const [active, setActive] = useState(0)
-
+const FilterPanel = ({ activeFilter, setActiveFilter }) => {
   // состояние модального окна сортировки
   const [open, setOpen] = useState(false)
 
@@ -46,9 +43,9 @@ const FilterPanel = () => {
         {filters.map((item, index) => {
           return (
             <li
-              onClick={() => setActive(index)}
+              onClick={() => setActiveFilter(index)}
               key={item}
-              className={index === active ? styles.active : null}
+              className={index === activeFilter ? styles.active : null}
             >
               {item}
             </li>

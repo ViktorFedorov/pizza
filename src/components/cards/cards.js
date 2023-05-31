@@ -4,16 +4,18 @@ import { getPizzaList } from '../../utils/api'
 import Skeleton from '../skeleton/skeleton'
 import styles from './cards.module.css'
 
-const Cards = () => {
+const Cards = ({ activeFilter }) => {
   const [list, setList] = useState([])
   const [loading, setLoading] = useState(false)
 
+  // запрашиваем с бэка товары по категориям - при каждой смене фильтра
   useEffect(() => {
     setLoading(true)
-    getPizzaList()
-      .then((list) => setList(list))
+
+    getPizzaList(activeFilter)
+      .then(setList)
       .finally(() => setLoading(false))
-  }, [])
+  }, [activeFilter])
 
   return (
     <div>
