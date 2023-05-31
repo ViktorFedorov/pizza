@@ -18,13 +18,13 @@ const Cards = ({ activeFilter, sortBy }) => {
   }, [activeFilter])
 
   const data = [...list].sort((a, b) => {
-    switch (sortBy) {
-      case 'цене':
+    switch (sortBy.title) {
+      case 'price':
         return b.price - a.price
-      case 'популярности':
+      case 'rating':
         return b.raiting - a.raiting
       default:
-        return b.title - a.title
+        return b.title > a.title ? -1 : 1
     }
   })
 

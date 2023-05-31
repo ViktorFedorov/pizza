@@ -7,7 +7,7 @@ const Main = () => {
   // активная кнопка фильтра
   const [activeFilter, setActiveFilter] = useState(0)
 
-  // выбор поля сортировки - по умолчанию - первый в списке
+  // объект сортировки
   const [sortBy, setSortBy] = useState(sortCategories[0])
 
   return (

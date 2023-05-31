@@ -52,7 +52,7 @@ const FilterPanel = ({ activeFilter, setActiveFilter, sortBy, setSortBy }) => {
       <div className={styles.sort}>
         <p className={styles.text}>Сортировка по: </p>
         <span onClick={clickHandler} className={styles.select}>
-          {sortBy}
+          {sortBy.name}
         </span>
 
         {open && (
@@ -62,14 +62,14 @@ const FilterPanel = ({ activeFilter, setActiveFilter, sortBy, setSortBy }) => {
                 return (
                   <li
                     onClick={() => sortHandler(item)}
-                    key={item}
+                    key={item.title}
                     className={
-                      sortBy === item
+                      sortBy.title === item.title
                         ? `${styles.listItem} ${styles.selected}`
                         : styles.listItem
                     }
                   >
-                    {item}
+                    {item.name}
                   </li>
                 )
               })}
