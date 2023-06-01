@@ -3,7 +3,7 @@ import FilterPanel from '../components/filter-panel/filter-panel'
 import Cards from '../components/cards/cards'
 import sortCategories from '../data/sort'
 
-const Main = () => {
+const Main = ({ searchQuery }) => {
   // активная кнопка фильтра
   const [activeFilter, setActiveFilter] = useState(0)
 
@@ -18,7 +18,11 @@ const Main = () => {
         sortBy={sortBy}
         setSortBy={setSortBy}
       />
-      <Cards activeFilter={activeFilter} sortBy={sortBy} />
+      <Cards
+        activeFilter={activeFilter}
+        sortBy={sortBy}
+        searchQuery={searchQuery}
+      />
     </div>
   )
 }
