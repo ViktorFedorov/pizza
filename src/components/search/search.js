@@ -17,6 +17,8 @@ const Search = () => {
     }
   }
 
+  const clearInput = () => () => setSearchQuery('')
+
   return (
     <div className={styles.search}>
       <input
@@ -27,6 +29,11 @@ const Search = () => {
         onFocus={handleFocus()}
         placeholder='find your pizza...'
       />
+      {searchQuery && (
+        <div className={styles.clear} onClick={clearInput()}>
+          {' '}
+        </div>
+      )}
     </div>
   )
 }

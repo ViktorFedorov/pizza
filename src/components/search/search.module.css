@@ -1,3 +1,7 @@
+.search {
+  position: relative;
+}
+
 .search > input {
   display: block;
   padding: 10px 30px 10px 50px;
@@ -9,4 +13,19 @@
   outline: none;
   letter-spacing: 1px;
   background: url(../../images/search-svg.svg) no-repeat 15px center;
+}
+
+.clear {
+  position: absolute;
+  right: 10px;
+  top: 17px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  background: url(../../images/remove-btn.svg) no-repeat center center;
+}
+
+.clear:hover {
+  opacity: 1;
 }
