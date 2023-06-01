@@ -17,17 +17,6 @@ const Cards = ({ activeFilter, sortBy }) => {
       .finally(() => setLoading(false))
   }, [activeFilter, sortBy])
 
-  // const data = [...list].sort((a, b) => {
-  //   switch (sortBy.title) {
-  //     case 'price':
-  //       return b.price - a.price
-  //     case 'rating':
-  //       return b.raiting - a.raiting
-  //     default:
-  //       return b.title > a.title ? -1 : 1
-  //   }
-  // })
-
   return (
     <div>
       <h1 className={styles.heading}>Все пиццы</h1>
