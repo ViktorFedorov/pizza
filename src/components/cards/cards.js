@@ -8,19 +8,17 @@ const Cards = ({ activeFilter, sortBy, searchQuery }) => {
   const [list, setList] = useState([])
   const [loading, setLoading] = useState(false)
 
-  // запрашиваем с бэка товары по категориям - при каждой смене фильтра
+  /*
+    запрашиваем с бэка товары при каждой
+    смене фильтра, метода сортировки и поискового запроса
+  */
   useEffect(() => {
     setLoading(true)
 
-    getPizzaList(activeFilter, sortBy.title)
+    getPizzaList(activeFilter, sortBy.title, searchQuery)
       .then(setList)
       .finally(() => setLoading(false))
-  }, [activeFilter, sortBy])
-
-  // массив данных отфильтрованный с учетом поиска
-  const prepareData = list.filter((item) => {
-    return item.title.toLowerCase().includes(searchQuery.toLowerCase())
-  })
+  }, [activeFilter, sortBy, searchQuery])
 
   return (
     <div>
@@ -28,7 +26,7 @@ const Cards = ({ activeFilter, sortBy, searchQuery }) => {
       <ul className={styles.list}>
         {loading
           ? [...new Array(4)].map((item, i) => <Skeleton key={i} />)
-          : prepareData.map((item) => <CardItem key={item.title} {...item} />)}
+          : list.map((item) => <CardItem key={item.title} {...item} />)}
       </ul>
     </div>
   )
