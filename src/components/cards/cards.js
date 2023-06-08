@@ -3,10 +3,15 @@ import CardItem from '../card-item/card-item'
 import { getPizzaList } from '../../utils/api'
 import Skeleton from '../skeleton/skeleton'
 import styles from './cards.module.css'
+import Paginator from '../paginator/paginator'
 
 const Cards = ({ activeFilter, sortBy, searchQuery }) => {
   const [list, setList] = useState([])
   const [loading, setLoading] = useState(false)
+
+  // пагинация
+  const [currentPage, setCurrentPage] = useState(1)
+  const [limit, setLimit] = useState(4)
 
   /*
     запрашиваем с бэка товары при каждой
@@ -15,10 +20,10 @@ const Cards = ({ activeFilter, sortBy, searchQuery }) => {
   useEffect(() => {
     setLoading(true)
 
-    getPizzaList(activeFilter, sortBy.title, searchQuery)
+    getPizzaList(activeFilter, sortBy.title, searchQuery, currentPage, limit)
       .then(setList)
       .finally(() => setLoading(false))
-  }, [activeFilter, sortBy, searchQuery])
+  }, [activeFilter, sortBy, searchQuery, currentPage])
 
   return (
     <div>
@@ -28,6 +33,11 @@ const Cards = ({ activeFilter, sortBy, searchQuery }) => {
           ? [...new Array(4)].map((item, i) => <Skeleton key={i} />)
           : list.map((item) => <CardItem key={item.title} {...item} />)}
       </ul>
+      <Paginator
+        pages={Math.ceil(9 / limit)} // 9 - количество пицц всего
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   )
 }
